@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ContactsScheduleController">
+   <children>
+      <Button layoutX="525.0" layoutY="351.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
+      <TableView fx:id="contactTableView" layoutX="11.0" layoutY="41.0" prefHeight="297.0" prefWidth="577.0">
+        <columns>
+          <TableColumn fx:id="contactNameCol" prefWidth="67.0" text="Contact Name" />
+          <TableColumn fx:id="appointmentIDCol" prefWidth="74.0" text="Appointment ID" />
+            <TableColumn fx:id="titleCol" prefWidth="59.0" text="Title" />
+            <TableColumn fx:id="typeCol" prefWidth="58.0" text="Type" />
+            <TableColumn fx:id="descriptionCol" prefWidth="71.0" text="Description" />
+            <TableColumn fx:id="startDateCol" prefWidth="88.0" text="Start Date &amp; Time" />
+            <TableColumn fx:id="endDateCol" prefWidth="82.0" text="End Date &amp; Time" />
+            <TableColumn fx:id="customerIDCol" prefWidth="101.0" text="Customer ID" />
+        </columns>
+      </TableView>
+      <Label fx:id="numOfContactsLabel" layoutX="14.0" layoutY="14.0" text="Total Number of Contacts" />
+   </children>
+</AnchorPane>
