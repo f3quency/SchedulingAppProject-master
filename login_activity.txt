@@ -58,3 +58,8 @@ Password: admin
 Date and Time: Fri Aug 19 07:40:20 GMT-07:00 2022
 Attempt success: true
 
+Username: test
+Password: test
+Date and Time: Sat Aug 20 08:57:30 GMT-07:00 2022
+Attempt success: true
+

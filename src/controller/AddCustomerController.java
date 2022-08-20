@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.AddNumInterface;
 import model.Customer;
 import utilities.JDBC;
 
@@ -58,8 +59,10 @@ public class AddCustomerController implements Initializable {
             PreparedStatement pStatement = JDBC.myConnection.prepareStatement(sqlString);
             ResultSet resultSet = pStatement.executeQuery();
             resultSet.next();  // moving cursor to last row
-            //NOTE!! Create and assign new customer ID in SchedulePageController
-            customerID = resultSet.getInt("MAX(Customer_ID)") + 1;
+
+            final int addNum = resultSet.getInt("MAX(Customer_ID)");    // gets max num of customer ID
+            AddNumInterface myAddNum = n -> n + 1;      // Lambda expression to add one to the max customer ID
+            customerID = myAddNum.addOneToNum(addNum);  // Executes the lambda expression's method.
         }
         catch(SQLException sqlException){
             System.err.println(sqlException.getMessage());
